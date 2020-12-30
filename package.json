@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Madhan-vj/odella_crud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Madhan-vj/odella_crud/issues"
+  },
+  "homepage": "https://github.com/Madhan-vj/odella_crud#readme"
 }
