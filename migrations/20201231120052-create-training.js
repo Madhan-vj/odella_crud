@@ -30,33 +30,33 @@ module.exports = {
           key: 'id'
         }
       },
-      customization: {
-        type: Sequelize.STRING
-      },
-      supportingDocumentUrl: {
-        type: Sequelize.STRING
-      },
-      supportingDocumentName: {
-        type: Sequelize.STRING
-      },
-      trainingDescription: {
-        type: Sequelize.STRING
-      },
-      trainingPrice: {
-        type: Sequelize.INTEGER
-      },
-      trainingTax: {
-        type: Sequelize.INTEGER
-      },
-      trainingOffer: {
-        type: Sequelize.INTEGER
-      },
-      trainingDiscount: {
-        type: Sequelize.INTEGER
-      },
-      MTP: {
-        type: Sequelize.BOOLEAN
-      },
+      // customization: {
+      //   type: Sequelize.STRING
+      // },
+      // supportingDocumentUrl: {
+      //   type: Sequelize.STRING
+      // },
+      // supportingDocumentName: {
+      //   type: Sequelize.STRING
+      // },
+      // trainingDescription: {
+      //   type: Sequelize.STRING
+      // },
+      // trainingPrice: {
+      //   type: Sequelize.INTEGER
+      // },
+      // trainingTax: {
+      //   type: Sequelize.INTEGER
+      // },
+      // trainingOffer: {
+      //   type: Sequelize.INTEGER
+      // },
+      // trainingDiscount: {
+      //   type: Sequelize.INTEGER
+      // },
+      // MTP: {
+      //   type: Sequelize.BOOLEAN
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
