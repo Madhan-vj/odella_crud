@@ -11,8 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Training.belongsTo(models.Module, {foreignKey: 'moduleId', as: 'module'})
-      Training.belongsTo(models.Module, {foreignKey: 'categoryId', as: 'category'})
+      Training.belongsTo(models.Module, {foreignKey: 'moduleId', as: 'module'});
+      Training.belongsTo(models.Module, {foreignKey: 'categoryId', as: 'category'});
+      Training.hasMany(models.Location, {as: 'Location'});
+      Training.belongsToMany(models.Tags, {through: 'TrainingTags', foreignKey: 'trainingId', as: 'tag'})
     }
   };
   Training.init({

@@ -7,7 +7,10 @@ const morgan = require('morgan');
 const category = require('./routes/category');
 const mod = require('./routes/module');
 const training = require('./routes/training');
-// const locations = require('./routes/location');
+const locations = require('./routes/location');
+const trainer = require('./routes/trainer');
+const tag = require('./routes/tag');
+
 const PORT = 3000;
 
 app.use(cors());
@@ -20,7 +23,9 @@ app.use(bodyParser.urlencoded({
 app.use('/category', category);
 app.use('/module', mod);
 app.use('/training', training);
-// app.use('/location', locations);
+app.use('/location', locations);
+app.use('/trainer', trainer);
+app.use('/tag', tag);
 
 app.listen(PORT, () => {
     console.log(`app is running on PORT:${PORT}`)

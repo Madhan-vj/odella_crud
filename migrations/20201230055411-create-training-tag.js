@@ -9,10 +9,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tagId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         
+          model: 'Tags',
+          key: 'id'
+        }
       },
       trainingId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         
+          model: 'Trainings',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

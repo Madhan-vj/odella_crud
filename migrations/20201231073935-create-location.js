@@ -11,11 +11,21 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      trainingId: {
-        type: Sequelize.INTEGER
-      },
       trainerId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         
+          model: 'Trainers',
+          key: 'id'
+        }
+      },
+      trainingId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         
+          model: 'Trainings',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
