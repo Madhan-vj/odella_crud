@@ -23,7 +23,10 @@ router.post('/',async(req,res) => {
     await db.Location.create({
         name: req.body.name,
         trainerId: req.body.trainerId,
-        trainingId: req.body.trainingId
+        trainingId: req.body.trainingId,
+        startDateAndTime: req.body.startDateAndTime,
+        EndDateAndTime: req.body.EndDateAndTime,
+        orderId: req.body.orderId
     }).then(result => {
         res.status(200).json({
             message:result

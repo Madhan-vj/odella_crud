@@ -5,7 +5,7 @@ const db = require('../models');
 router.get('/', async (req,res) => {
     try{
     console.log("fetching");
-    await db.Tags.findAll().then(users => {
+    await db.Tag.findAll().then(users => {
         res.status(200).json({
             tags:users
         });
@@ -20,7 +20,7 @@ router.get('/', async (req,res) => {
 //<===============Adding Tags =========>
 router.post('/',async(req,res) => {
     try{
-    await db.Tags.create({
+    await db.Tag.create({
         name: req.body.name
     }).then(result => {
         res.status(200).json({
@@ -36,7 +36,7 @@ router.post('/',async(req,res) => {
 
 router.delete('/:id', async(req,res) => {
     try{
-        await db.Tags.destroy({
+        await db.Tag.destroy({
             where : {id : req.params.id}
         }).then(result => {
             res.status(500).json({

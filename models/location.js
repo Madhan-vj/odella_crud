@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Location.belongsTo(models.Trainer, {foreignKey: 'trainerId', as: 'trainer'});
       Location.belongsTo(models.Training, {foreignKey: 'trainingId', as: 'training'});
+
     }
   };
   Location.init({
