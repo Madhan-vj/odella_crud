@@ -43,16 +43,16 @@ module.exports = {
       //   type: Sequelize.STRING
       // },
       // trainingPrice: {
-      //   type: Sequelize.INTEGER
+      //   type: Sequelize.FLOAT
       // },
       // trainingTax: {
-      //   type: Sequelize.INTEGER
+      //   type: Sequelize.FLOAT
       // },
       // trainingOffer: {
-      //   type: Sequelize.INTEGER
+      //   type: Sequelize.FLOAT
       // },
       // trainingDiscount: {
-      //   type: Sequelize.INTEGER
+      //   type: Sequelize.FLOAT
       // },
       // MTP: {
       //   type: Sequelize.BOOLEAN

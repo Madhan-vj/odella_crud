@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
   Location.init({
     name: DataTypes.STRING,
     trainerId: DataTypes.INTEGER,
-    trainingId: DataTypes.INTEGER
+    trainingId: DataTypes.INTEGER,
+    startDateAndTime: DataTypes.DATE,
+    EndDateAndTime: DataTypes.DATE,
+    orderId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Location',

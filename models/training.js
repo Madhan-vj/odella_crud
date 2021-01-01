@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       Training.belongsTo(models.Module, {foreignKey: 'categoryId', as: 'category'});  
       Training.hasMany(models.Location, {as: 'Location'});
       Training.hasMany(models.TrainingPrice, {as: 'trainingPrice'});
-      Training.belongsToMany(models.Tags, {through: 'TrainingTags', foreignKey: 'trainingId', as: 'tag'})
+      Training.belongsToMany(models.Tag, {through: 'TrainingTags', foreignKey: 'trainingId', as: 'tag'})
     }
   };
   Training.init({
@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     // supportingDocumentUrl: DataTypes.STRING,
     // supportingDocumentName: DataTypes.STRING,
     // trainingDescription: DataTypes.STRING,
-    // trainingPrice: DataTypes.INTEGER,
-    // trainingTax: DataTypes.INTEGER,
-    // trainingOffer: DataTypes.INTEGER,
-    // trainingDiscount: DataTypes.INTEGER,
+    // trainingPrice: DataTypes.FLOAT,
+    // trainingTax: DataTypes.FLOAT,
+    // trainingOffer: DataTypes.FLOAT,
+    // trainingDiscount: DataTypes.FLOAT,
     // MTP: DataTypes.BOOLEAN
   }, {
     sequelize,

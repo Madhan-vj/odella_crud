@@ -27,6 +27,15 @@ module.exports = {
           key: 'id'
         }
       },
+      startDateAndTime: {
+        type: Sequelize.DATE
+      },
+      EndDateAndTime: {
+        type: Sequelize.DATE
+      },
+      orderId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
