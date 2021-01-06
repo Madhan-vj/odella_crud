@@ -1,8 +1,13 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const PORT = 3000;
+
+dotenv.config();
+
 
 const category = require('./routes/category');
 const mod = require('./routes/module');
@@ -11,7 +16,6 @@ const locations = require('./routes/location');
 const trainer = require('./routes/trainer');
 const tag = require('./routes/tag');
 
-const PORT = 3000;
 
 app.use(cors());
 app.use(morgan('dev'));

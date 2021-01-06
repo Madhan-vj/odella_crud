@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Training.belongsTo(models.Module, {foreignKey: 'moduleId', as: 'module'});
       Training.belongsTo(models.Module, {foreignKey: 'categoryId', as: 'category'});  
-      Training.hasMany(models.Location, {as: 'Location'});
-      Training.hasMany(models.TrainingPrice, {as: 'trainingPrice'});
+      Training.hasMany(models.Location, {foreignKey: 'trainingId', as: 'Location'});
+      Training.hasMany(models.TrainingPrice, {foreignKey: 'trainingId',as: 'trainingPrice'});
       Training.belongsToMany(models.Tag, {through: 'TrainingTags', foreignKey: 'trainingId', as: 'tag'})
     }
   };

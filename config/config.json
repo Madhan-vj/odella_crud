@@ -1,10 +1,14 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "training_details",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "nptphqnv",
+    "password": "ZEzRXKID2zZQO3mZpye_p1nWyOERnwF5",
+    "database": "nptphqnv",
+    "host": "suleiman.db.elephantsql.com",
+    "hostname": "suleiman.db.elephantsql.com",
+    "dialect": "postgres",
+    "port": 5432,
+    "use_env_variable": "DATABASE_URL",
+    "url": "postgres://nptphqnv:ZEzRXKID2zZQO3mZpye_p1nWyOERnwF5@suleiman.db.elephantsql.com:5432/nptphqnv"
   },
   "test": {
     "username": "root",
