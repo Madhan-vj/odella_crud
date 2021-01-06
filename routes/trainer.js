@@ -19,15 +19,16 @@ router.get('/', async (req,res) => {
 //<========== Adding trainer =========>
 router.post('/',async(req,res) => {
     try{
-    await db.Trainer.create({
+   let result=await db.Trainer.create({
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
-    }).then(result => {
+    })
+
         res.status(200).json({
             message:result
         });
-    })
+
 } catch(err) {
         res.status(404).json({
             message : err

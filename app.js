@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const PORT = 3000;
+// const PORT = 3000;
 
 dotenv.config();
 

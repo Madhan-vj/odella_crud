@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       // Trainer.hasOne(models.Location, {as: 'Location'})
-      Trainer.belongsTo(models.Location, {foreignKey: 'trainerId', as: 'training'});
+      Trainer.hasOne(models.Location, {foreignKey: 'trainerId'});
     }
   };
   Trainer.init({
     name: DataTypes.STRING,
-    phone: DataTypes.INTEGER,
+    phone: DataTypes.DOUBLE,
     email: DataTypes.STRING
   }, {
     sequelize,

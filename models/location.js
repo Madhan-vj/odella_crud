@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Location.hasOne(models.Trainer, {foreignKey: 'trainerId', as: 'trainer'});
+      Location.belongsTo(models.Trainer, {foreignKey: 'trainerId', as: 'trainer'});
       Location.belongsTo(models.Training, {foreignKey: 'trainingId', as: 'training'});
     }
   };
