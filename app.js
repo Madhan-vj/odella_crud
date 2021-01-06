@@ -31,6 +31,7 @@ app.use('/location', locations);
 app.use('/trainer', trainer);
 app.use('/tag', tag);
 
-app.listen(PORT, () => {
-    console.log(`app is running on PORT:${PORT}`)
-});
+// app.listen(PORT, () => {
+//     console.log(`app is running on PORT:${PORT}`)
+// });
+app.listen(process.env.PORT || 5000)
