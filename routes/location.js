@@ -5,11 +5,10 @@ const db = require('../models');
 router.get('/', async (req,res) => {
     try{
     console.log("fetching");
-    await db.Location.findAll().then(users => {
+    let result = await db.Location.findAll();
         res.status(200).json({
-            location:users
+            location:result
         });
-    })
 } catch(err) {
     console.log(err);
         res.status(404).json({
@@ -21,18 +20,17 @@ router.get('/', async (req,res) => {
 //<=========== Adding location =========>
 router.post('/',async(req,res) => {
     try{
-    await db.Location.create({
+        let result = await db.Location.create({
         name: req.body.name,
         trainerId: req.body.trainerId,
         trainingId: req.body.trainingId,
         startDateAndTime: req.body.startDateAndTime,
         EndDateAndTime: req.body.EndDateAndTime,
         orderId: req.body.orderId
-    }).then(result => {
+    })
         res.status(200).json({
             message:result
         });
-    })
 } catch(err) {
         res.status(404).json({
             message : err
@@ -42,13 +40,12 @@ router.post('/',async(req,res) => {
 
 router.delete('/:id', async(req,res) => {
     try {
-        await db.Location.destroy({
+        let result = await db.Location.destroy({
             where : {id : req.params.id}
-        }).then(result => {
+        })
             res.status(500).json({
                 message: "Deleted"
             })
-        })
     } catch(err) {
             res.status(404).json({
                 message: err

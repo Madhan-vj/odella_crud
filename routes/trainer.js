@@ -4,11 +4,10 @@ const db = require('../models');
 
 router.get('/', async (req,res) => {
     try{
-    await db.Trainer.findAll().then(users => {
+        let result = await db.Trainer.findAll(); 
         res.status(200).json({
-            trainer:users
+            trainer:result
         });
-    })
 } catch(err) {
         res.status(404).json({
             message : err
@@ -38,13 +37,13 @@ router.post('/',async(req,res) => {
 
 router.delete('/:id', async(req,res) => {
     try{
-        await db.Trainer.destroy({
+        let result=await db.Trainer.destroy({
             where : {id : req.params.id}
-        }).then(result => {
+        }) 
             res.status(500).json({
                 message: "Deleted"
             })
-        })
+        
     } catch(err) {
             res.status(404).json({
                 message: err

@@ -5,11 +5,10 @@ const db = require('../models');
 router.get('/', async (req,res) => {
     try{
     console.log("fetching");
-    await db.Tag.findAll().then(users => {
+        let result = await db.Tag.findAll();
         res.status(200).json({
-            tags:users
+            tags:result
         });
-    })
 } catch(err) {
         res.status(404).json({
             message : err
@@ -20,13 +19,12 @@ router.get('/', async (req,res) => {
 //<===============Adding Tags =========>
 router.post('/',async(req,res) => {
     try{
-    await db.Tag.create({
+        let result = await db.Tag.create({
         name: req.body.name
-    }).then(result => {
+    })
         res.status(200).json({
             message:result
         });
-    })
 } catch(err) {
         res.status(404).json({
             message : err
@@ -36,13 +34,12 @@ router.post('/',async(req,res) => {
 
 router.delete('/:id', async(req,res) => {
     try{
-        await db.Tag.destroy({
+        let result = await db.Tag.destroy({
             where : {id : req.params.id}
-        }).then(result => {
+        })
             res.status(500).json({
                 message: "Deleted"
             })
-        })
     } catch(err) {
             res.status(404).json({
                 message: err
