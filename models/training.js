@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Training.belongsTo(models.Module, {foreignKey: 'moduleId', as: 'module'});
       Training.belongsTo(models.Module, {foreignKey: 'categoryId', as: 'category'});  
       Training.hasMany(models.Location, {foreignKey: 'trainingId', as: 'Location'});
-      Training.hasMany(models.TrainingPrice, {foreignKey: 'trainingId',as: 'trainingPrice'});
+      Training.hasMany(models.TrainingPrice, {foreignKey: 'trainingId',as: 'PriceForTraining'});
       Training.belongsToMany(models.Tag, {through: 'TrainingTags', foreignKey: 'trainingId', as: 'tag'})
     }
   };
@@ -23,15 +23,15 @@ module.exports = (sequelize, DataTypes) => {
     reference: DataTypes.STRING,
     moduleId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER,
-    // customization: DataTypes.STRING,
-    // supportingDocumentUrl: DataTypes.STRING,
-    // supportingDocumentName: DataTypes.STRING,
-    // trainingDescription: DataTypes.STRING,
-    // trainingPrice: DataTypes.FLOAT,
-    // trainingTax: DataTypes.FLOAT,
-    // trainingOffer: DataTypes.FLOAT,
-    // trainingDiscount: DataTypes.FLOAT,
-    // MTP: DataTypes.BOOLEAN
+    customization: DataTypes.STRING,
+    supportingDocumentUrl: DataTypes.STRING,
+    supportingDocumentName: DataTypes.STRING,
+    trainingDescription: DataTypes.STRING,
+    trainingPrice: DataTypes.FLOAT,
+    trainingTax: DataTypes.FLOAT,
+    trainingOffer: DataTypes.FLOAT,
+    trainingDiscount: DataTypes.FLOAT,
+    MTP: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Training',

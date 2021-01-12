@@ -1,17 +1,26 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
+// const training = require('../models/training');
 
 router.get('/', async (req,res) => {
+    
     try{
-        let result = await db.Training.findAll();
-        res.status(200).json({
-            training:result
+        let trainings = await db.Training.findAll({
+            include: [{
+                model: db.Location,
+                as:'Location',
+            }]
         });
-} catch(err) {
-        res.status(404).json({
-            message : err
+        res.status(200).json({
+            trainings
         })
+
+    } catch(err) {
+        console.log(err)
+            res.status(404).json({
+                message : err
+            })
     }
 })
 
@@ -19,13 +28,26 @@ router.post('/',async(req,res) => {
     try{
         let result = await db.Training.create({
         name: req.body.name,
-        trainingId: req.body.trainingId
+        reference:req.body.reference,
+        moduleId: req.body.moduleId,
+        categoryId: req.body.categoryId,
+        customization: req.body.customization,
+        supportingDocumentUrl: req.body.supportingDocumentUrl,
+        supportingDocumentName: req.body.supportingDocumentName,
+        trainingDescription: req.body.trainingDescription,
+        trainingPrice: req.body.trainingPrice,
+        trainingTax: req.body.trainingTax,
+        trainingOffer: req.body.trainingOffer,
+        trainingDiscount: req.body.trainingDiscount,
+        MTP: req.body.MTP,
+        
     })
         res.status(200).json({
             message:result
         });
    
-} catch(err) {
+    } catch(err) {
+        console.log(err);
         res.status(404).json({
             message : err
         })

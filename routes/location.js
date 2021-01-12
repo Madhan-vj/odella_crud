@@ -17,6 +17,22 @@ router.get('/', async (req,res) => {
     }
 })
 
+router.get('/:id',async(req,res) => {
+    try{
+        console.log('fetch by id');
+        let result = await db.Location.findAll({
+            where : {trainingId : req.params.id}
+        })
+        res.status(200).json({
+            location:result
+        });
+    }catch(err) {
+        console.log(err);
+            res.status(404).json({
+                message : err
+            })
+        }
+})
 //<=========== Adding location =========>
 router.post('/',async(req,res) => {
     try{
