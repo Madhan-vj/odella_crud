@@ -40,7 +40,8 @@ router.post('/',async(req,res) => {
         trainingOffer: req.body.trainingOffer,
         trainingDiscount: req.body.trainingDiscount,
         MTP: req.body.MTP,
-        
+        LocationDetails: req.body.LocationDetails,
+        tagDetails: req.body.tagDetails
     })
         res.status(200).json({
             message:result

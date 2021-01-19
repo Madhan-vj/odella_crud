@@ -32,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     trainingOffer: DataTypes.FLOAT,
     trainingDiscount: DataTypes.FLOAT,
     MTP: DataTypes.BOOLEAN,
+    LocationDetails: DataTypes.JSON,
+    tagDetails: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Training',
