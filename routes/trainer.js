@@ -40,7 +40,7 @@ router.delete('/:id', async(req,res) => {
         let result=await db.Trainer.destroy({
             where : {id : req.params.id}
         }) 
-            res.status(500).json({
+            res.status(202).json({
                 message: "Deleted"
             })
         

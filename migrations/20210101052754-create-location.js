@@ -34,7 +34,8 @@ module.exports = {
         type: Sequelize.DATE
       },
       orderId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,

@@ -53,7 +53,7 @@ router.delete('/:id', async(req,res) => {
         let result = await db.Category.destroy({
         where : {id : req.params.id}
     })
-        res.status(500).json({
+        res.status(202).json({
             message: "Deleted"
         })
 } catch(err) {

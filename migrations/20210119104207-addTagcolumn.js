@@ -10,7 +10,7 @@ module.exports = {
      */
     await queryInterface.addColumn('Trainings', 'tagDetails', {
       type: Sequelize.STRING,
-      allowNull: true,
+      
     })
   },
 

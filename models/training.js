@@ -32,8 +32,17 @@ module.exports = (sequelize, DataTypes) => {
     trainingOffer: DataTypes.FLOAT,
     trainingDiscount: DataTypes.FLOAT,
     MTP: DataTypes.BOOLEAN,
-    LocationDetails: DataTypes.JSON,
-    tagDetails: DataTypes.STRING
+    // LocationDetails: {
+    //   type:DataTypes.STRING,
+    //   get(){
+    //     return JSON.parse(this.getDataValue('LocationDetails'))
+    //   },
+    //   set(value){
+    //      this.setDataValue('LocationDetails',JSON.stringify(value))
+    //   }
+
+    // },
+    // tagDetails: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Training',
