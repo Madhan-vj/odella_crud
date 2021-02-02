@@ -28,11 +28,16 @@ router.post('/',async(req,res) => {
     try{
         let find = await db.Location.findAll();
         let check = false;
+        var i;
+        for( i= 0; i < req.body.location.length; i++){
         find.forEach(item => {
-            if (item.name == req.body.location.name){
+            if (item.name == req.body.location[i].name){
                 check = true;
             }
         })
+    }
+    console.log(check,"check");
+    console.log(req.body.location.length,"length");
         if(check){
             console.log("Location already in db");
             res.status(404).json({
@@ -54,17 +59,19 @@ router.post('/',async(req,res) => {
         trainingOffer: req.body.training.trainingOffer,
         trainingDiscount: req.body.training.trainingDiscount,
         MTP: req.body.training.MTP,
-    }).then(async(result) => {
+    }).then((result) => {
         console.log(result.id,"<=========>");
         req.body.location.trainingId = result.id;
+             req.body.location.forEach(async(item) => {
         let locationResult = await db.Location.create({
-            name: req.body.location.name,
-            trainerId: req.body.location.trainerId,
+            name: item.name,
+            trainerId: item.trainerId,
             trainingId: req.body.location.trainingId,
-            startDateAndTime: req.body.location.startDateAndTime,
-            EndDateAndTime: req.body.location.EndDateAndTime,
-            orderId: req.body.location.orderId
-        }).then(async(res) => {
+            startDateAndTime: item.startDateAndTime,
+            EndDateAndTime: item.EndDateAndTime,
+            orderId: item.orderId
+          })
+         }).then(async(res) => {
             let search = await db.Tag.findAll();
             var valid = 0;
             search.forEach(element => {
